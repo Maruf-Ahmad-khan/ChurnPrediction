@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Estimated Salary Prediction</h2>
+        <form id="predictionForm">
+            <div class="form-group">
+                <label>Geography:</label>
+                <select name="geography">
+                    <option value="France">France</option>
+                    <option value="Spain">Spain</option>
+                    <option value="Germany">Germany</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Gender:</label>
+                <select name="gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Age:</label>
+                <input type="number" name="age" value="40" required>
+            </div>
+            <div class="form-group">
+                <label>Balance:</label>
+                <input type="number" name="balance" step="0.01" value="60000" required>
+            </div>
+            <div class="form-group">
+                <label>Credit Score:</label>
+                <input type="number" name="credit_score" min="0" max="1000" value="600" required>
+            </div>
+            <div class="form-group">
+                <label>Exited:</label>
+                <input type="number" name="exited" min="0" max="1" value="0">
+            </div>
+            <div class="form-group">
+                <label>Tenure:</label>
+                <input type="number" name="tenure" min="0" max="10" value="3">
+            </div>
+            <div class="form-group">
+                <label>Number of Products:</label>
+                <input type="number" name="num_of_products" min="1" max="4" value="2">
+            </div>
+            <div class="form-group">
+                <label>Has Credit Card:</label>
+                <input type="number" name="has_cr_card" min="0" max="1" value="1">
+            </div>
+            <div class="form-group">
+                <label>Is Active Member:</label>
+                <input type="number" name="is_active_member" min="0" max="1" value="1">
+            </div>
+            <button type="submit">Predict Salary</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+ 
